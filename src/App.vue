@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <router-view/>
-  </div>
+	<div id="app">
+		<router-view />
+	</div>
 </template>
 
 <style lang="scss">
@@ -11,6 +11,10 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #000000;
+}
+
+body {
+  margin: 0;
 }
 
 </style>
