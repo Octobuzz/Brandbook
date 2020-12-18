@@ -1,10 +1,19 @@
 <template>
 	<div class="font">
 		<div class="font-block">
+			<div class="font-block__demo">
+				<p>Demo</p>
+			</div>
+			<p class="font-block__display">
+				ABCDEFGHIJKLMOPQRSTUVWXYZabcdefghijk <br />
+				lmopqrstuvwxyz1234567890.,;:'"?!@#$%&*{(/|\)}
+			</p>
+		</div>
+		<div class="font-block">
 			<h2 class="font-headline">
 				{{ typingHeadline }}
 			</h2>
-			<p>
+			<p class="font-block__text">
 				Фирменная гарнитура логотипа — <b>Trueno</b>  <br />
 				Логотип набран начертанием <b>Regular</b> <br />
 				Кириллическая гарнитура компании — <b>Open Sans</b>  
@@ -62,8 +71,9 @@ export default class FontView extends Vue {
     width: 100%;
     text-align: left;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
 
     &-headline {
         font-size: 30px;
@@ -74,9 +84,18 @@ export default class FontView extends Vue {
         padding: 25px 0;
         width: 50%;
 
-        & p {
+        &:first-child {
+            margin-right: 45px;
+        }
+
+        &__text {
             margin: 0 0 15px;
             line-height: 30px;
+        }
+
+        &__display {
+            margin: 0;
+            text-align: right;
         }
     }
 
