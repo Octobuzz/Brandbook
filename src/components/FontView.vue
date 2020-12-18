@@ -11,7 +11,7 @@
 		</div>
 		<div class="font-block">
 			<h2 class="font-headline">
-				Шрифт
+				{{ typingHeadline }}
 			</h2>
 			<p class="font-block__text">
 				Фирменная гарнитура логотипа — <b>Trueno</b>  <br />
@@ -31,6 +31,7 @@
 				>Open Sans</a>
 			</div>
 		</div>
+		{{ typingInsult }}
 	</div>
 </template>
 
@@ -39,7 +40,30 @@ import { Vue, Component } from 'vue-property-decorator';
 
 @Component
 
-export default class FontView extends Vue {}
+export default class FontView extends Vue {
+  headline = 'Шрифт';
+  typingHeadline = '';
+  typingInsult = '';
+  
+  mounted() {
+	  this.textTyping(this.headline, 'typingHeadline', 150);
+	  this.textTyping('Ты самая красивая, а your mom gay', 'typingInsult', 100);
+  }
+
+  textTyping(text, stateTextVar, delay=150) {
+  	let counter = 0;
+  	let timer;
+    
+  	if (counter <= text.length) {
+  		timer = setInterval(() => {
+  			this[stateTextVar] = text.substr(0, counter);
+			  counter++;
+  		}, delay);
+  	} else if (timer) {
+  		clearInterval(timer);
+  	}
+  }
+}
 </script>
 
 <style scoped lang="scss">
