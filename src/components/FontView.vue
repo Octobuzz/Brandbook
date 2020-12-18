@@ -1,22 +1,26 @@
 <template>
 	<div class="font">
-		<h2 class="font-headline">
-			Шрифт
-		</h2>
 		<div class="font-block">
+			<h2 class="font-headline">
+				Шрифт
+			</h2>
 			<p>
 				Фирменная гарнитура логотипа — <b>Trueno</b>  <br />
 				Логотип набран начертанием <b>Regular</b> <br />
-				Основная кириллическая гарнитура компании — <b>Open Sans</b>  
+				Кириллическая гарнитура компании — <b>Open Sans</b>  
 			</p>
 			Была выбрана гарнитура без засечек, чтобы показать модернизм и простоту, к которым стремятся нынешние IT-гиганты.
 			Также важно было найти определенное начертание буквы «К» (нижняя линия, отходящая от верхней) для сохранения возможности разработки дизайна монограммы в дальнейшем.
-			Семейство Trueno удовлетворяет требованиям, а также имеет очень широкий выбор начертаний.
+			Семейство Trueno удовлетворяет требованиям, а также имеет очень широкий выбор начертаний. <br />
 			Open Sans выбрана для кириллицы (особенность начертания буквы «К» сохранить не удалось). Впоследствии кириллическую гарнитуру можно изменить на более подходящую.
-		</div>
-		<div class="font-actions">
-			<a href="#">Trueno</a>
-			<a href="#">Open Sans</a>
+			<div class="font-actions">
+				<a href="#">Trueno</a>
+				<a
+					href="https://fonts.google.com/specimen/Open+Sans?query=open" 
+					target="_blank" 
+					rel="noopener"
+				>Open Sans</a>
+			</div>
 		</div>
 	</div>
 </template>
@@ -33,13 +37,79 @@ export default class FontView extends Vue {}
 .font {
     width: 100%;
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
     &-headline {
-        margin: 0;
+        font-size: 30px;
+        margin: 0 0 30px;
     }
 
-    &-block p {
-        margin: 0;
+    &-block {
+        padding: 25px 0;
+        width: 50%;
+
+        & p {
+            margin: 0 0 15px;
+            line-height: 30px;
+        }
+    }
+
+    &-actions {
+        margin-top: 30px;
+
+        & a {
+            display: inline-block;
+            color: inherit;
+            text-decoration: none;
+            position: relative;
+
+            &:first-child {
+                margin-right: 35px;
+
+                &::after {
+                    content: "Архив";
+                    font-size: 12px;
+                    line-height: 2;
+                }
+            }
+
+            &:last-child::after {
+                content: "Ссылка";
+                position: absolute;
+                font-size: 12px;
+                line-height: 2;
+            }
+
+            &:hover {
+                color: #6600cc;
+            }
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: -2px;
+                width: 100%;
+                height: 2px;
+                background-color: #000000;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: #000000;
+            }
+
+            &:hover::before,
+            &:hover::after {
+                background-color: #6600cc;
+            }
+        }
     }
 }
 </style>
