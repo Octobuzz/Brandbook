@@ -44,5 +44,9 @@ export default class Materials extends Vue {}
         line-height: 80px;
         margin: 30px 0 45px;
     }
+    .container {
+        width: 1100px;
+        margin: 0 auto;
+    }
 }
 </style>
