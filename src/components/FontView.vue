@@ -1,7 +1,7 @@
 <template>
 	<div class="font">
 		<h2 class="font-headline">
-			Шрифт
+			{{ typingHeadline }}
 		</h2>
 		<div class="font-block">
 			<p>
@@ -14,6 +14,7 @@
 			Семейство Trueno удовлетворяет требованиям, а также имеет очень широкий выбор начертаний.
 			Open Sans выбрана для кириллицы (особенность начертания буквы «К» сохранить не удалось). Впоследствии кириллическую гарнитуру можно изменить на более подходящую.
 		</div>
+		{{ typingInsult }}
 		<div class="font-actions">
 			<a href="#">Trueno</a>
 			<a href="#">Open Sans</a>
@@ -26,7 +27,30 @@ import { Vue, Component } from 'vue-property-decorator';
 
 @Component
 
-export default class FontView extends Vue {}
+export default class FontView extends Vue {
+  headline = 'Шрифт';
+  typingHeadline = '';
+  typingInsult = '';
+  
+  mounted() {
+	  this.textTyping(this.headline, 'typingHeadline', 150);
+	  this.textTyping('Ты самая красивая, а your mom gay', 'typingInsult', 100);
+  }
+
+  textTyping(text, stateTextVar, delay=150) {
+  	let counter = 0;
+  	let timer;
+    
+  	if (counter <= text.length) {
+  		timer = setInterval(() => {
+  			this[stateTextVar] = text.substr(0, counter);
+			  counter++;
+  		}, delay);
+  	} else if (timer) {
+  		clearInterval(timer);
+  	}
+  }
+}
 </script>
 
 <style scoped lang="scss">
