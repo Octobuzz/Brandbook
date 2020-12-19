@@ -24,7 +24,7 @@ export default class PageFooter extends Vue {}
     width: 100%;
     height: 60px;
     background-color: $black;
-    color: #cacaca;
+    color: $grey;
     font-weight: 300;
     font-size: 14px;
     display: flex;

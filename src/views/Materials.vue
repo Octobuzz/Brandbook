@@ -11,9 +11,7 @@
 				</h2>
 			</div>
 			<div>
-				<h2 class="materials__headline">
-					Цвета
-				</h2>
+				<colors-view />
 			</div>
 			<div>
 				<font-view />
@@ -28,12 +26,14 @@ import { Vue, Component } from 'vue-property-decorator';
 import PageHeader from '@/components/PageHeader.vue';
 import FontView from '@/components/FontView.vue';
 import PageFooter from '@/components/PageFooter';
+import ColorsView from '@/components/ColorsView';
 
 @Component({
 	components: { 
 		PageHeader,
 		FontView,
 		PageFooter,
+		ColorsView,
 	},
 })
 
