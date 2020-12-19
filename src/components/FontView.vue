@@ -1,8 +1,19 @@
 <template>
 	<div class="font">
 		<div class="font-block">
-			<div class="font-block__demo">
-				<p>Demo</p>
+			<div class="font-block__demo-wrap">
+				<p class="font-block__demo">
+					{{ typingDemo }}
+				</p>
+				<p class="font-block__demo font-block__demo-bold">
+					{{ typingDemo }}
+				</p>
+				<p class="font-block__demo font-block__demo-light">
+					{{ typingDemo }}
+				</p>
+				<p class="font-block__demo font-block__demo-outline">
+					{{ typingDemo }}
+				</p>
 			</div>
 			<p class="font-block__display">
 				ABCDEFGHIJKLMOPQRSTUVWXYZabcdefghijk <br />
@@ -11,14 +22,14 @@
 		</div>
 		<div class="font-block">
 			<h2 class="font-headline">
-				{{ typingHeadline }}
+				Шрифт
 			</h2>
 			<p class="font-block__text">
 				Фирменная гарнитура логотипа — <b>Trueno</b>  <br />
 				Логотип набран начертанием <b>Regular</b> <br />
 				Кириллическая гарнитура компании — <b>Open Sans</b>  
 			</p>
-			Была выбрана гарнитура без засечек, чтобы показать модернизм и простоту, к которым стремятся нынешние IT-гиганты.
+			Была выбрана гарнитура без засечек, чтобы показать модернизм и простоту, к которым стремятся нынешние <br /> IT-гиганты.
 			Также важно было найти определенное начертание буквы «К» (нижняя линия, отходящая от верхней) для сохранения возможности разработки дизайна монограммы в дальнейшем.
 			Семейство Trueno удовлетворяет требованиям, а также имеет очень широкий выбор начертаний. <br />
 			Open Sans выбрана для кириллицы (особенность начертания буквы «К» сохранить не удалось). Впоследствии кириллическую гарнитуру можно изменить на более подходящую.
@@ -31,7 +42,6 @@
 				>Open Sans</a>
 			</div>
 		</div>
-		{{ typingInsult }}
 	</div>
 </template>
 
@@ -41,13 +51,11 @@ import { Vue, Component } from 'vue-property-decorator';
 @Component
 
 export default class FontView extends Vue {
-  headline = 'Шрифт';
-  typingHeadline = '';
-  typingInsult = '';
+  demo = 'KleverTech';
+  typingDemo = '';
   
   mounted() {
-	  this.textTyping(this.headline, 'typingHeadline', 150);
-	  this.textTyping('Ты самая красивая, а your mom gay', 'typingInsult', 100);
+	  this.textTyping(this.demo, 'typingDemo', 300);
   }
 
   textTyping(text, stateTextVar, delay=150) {
@@ -73,7 +81,7 @@ export default class FontView extends Vue {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: flex-start;
+    align-items: stretch;
 
     &-headline {
         font-size: 30px;
@@ -86,6 +94,11 @@ export default class FontView extends Vue {
 
         &:first-child {
             margin-right: 45px;
+            padding-bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
         }
 
         &__text {
@@ -94,8 +107,29 @@ export default class FontView extends Vue {
         }
 
         &__display {
+            height: 60px;
             margin: 0;
-            text-align: right;
+            text-align: center;
+            line-height: 30px;
+        }
+
+        &__demo {   
+            margin: 0;
+            font-size: 80px;
+            line-height: 120px;
+
+            &-light {
+                font-weight: 300;
+            }
+
+            &-bold {
+                color: $main;
+                font-weight: 600;
+            }
+
+            &-outline {
+                font-weight: 700;
+            }
         }
     }
 
@@ -126,7 +160,7 @@ export default class FontView extends Vue {
             }
 
             &:hover {
-                color: #6600cc;
+                color: $main;
             }
 
             &::before {
@@ -135,22 +169,22 @@ export default class FontView extends Vue {
                 top: -2px;
                 width: 100%;
                 height: 2px;
-                background-color: #000000;
+                background-color: $black;
             }
 
             &::after {
                 content: "";
                 position: absolute;
-                bottom: -2px;
+                bottom: -5px;
                 left: 0;
                 width: 100%;
                 height: 2px;
-                background-color: #000000;
+                background-color: $black;
             }
 
             &:hover::before,
             &:hover::after {
-                background-color: #6600cc;
+                background-color: $main;
             }
         }
     }

@@ -8,12 +8,13 @@
 #app {
   font-family: $klever;
   text-align: center;
-  color: #000000;
+  color: $black;
 }
 
 body {
   margin: 0;
   font-size: 18px;
+  line-height: 1.7;
 }
 
 </style>

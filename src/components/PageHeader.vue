@@ -56,7 +56,7 @@ export default class PageHeader extends Vue {}
         text-decoration: none;
         &:hover {
             transition: color .3s ease;
-            color:#6600CC;
+            color: $main;
         }
     }
 }
