@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "Trueno";
     src: url("/public/fonts/TruenoLt.otf") format("opentype");
@@ -17,7 +18,19 @@
 }
 
 @font-face {
-    font-family: "Trueno";
-    src: url("/public/fonts/TruenoBdOl.otf") format("opentype");
-    font-weight: 700;
+    font-family: "Open-sans";
+    src: url("/public/fonts/OpenSans-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "Open-sans";
+    src: url("/public/fonts/OpenSans-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Open-sans";
+    src: url("/public/fonts/OpenSans-SemiBold.ttf") format("truetype");;
+    font-weight: 600;
 }
