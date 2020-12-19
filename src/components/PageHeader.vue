@@ -52,7 +52,7 @@ export default class PageHeader extends Vue {}
     }
 
     &__item a {
-        color: #000000;
+        color: $black;
         text-decoration: none;
         &:hover {
             transition: color .3s ease;

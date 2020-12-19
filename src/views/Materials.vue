@@ -19,6 +19,7 @@
 				<font-view />
 			</div>
 		</div>
+		<page-footer class="footer" />
 	</div>
 </template>
 
@@ -26,11 +27,13 @@
 import { Vue, Component } from 'vue-property-decorator';
 import PageHeader from '@/components/PageHeader.vue';
 import FontView from '@/components/FontView.vue';
+import PageFooter from '@/components/PageFooter';
 
 @Component({
 	components: { 
 		PageHeader,
-		FontView
+		FontView,
+		PageFooter,
 	},
 })
 
@@ -46,7 +49,7 @@ export default class Materials extends Vue {}
     }
     .container {
         width: 1100px;
-        margin: 0 auto;
-    }
+		margin: 0 auto;
+	}
 }
 </style>

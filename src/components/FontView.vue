@@ -82,6 +82,7 @@ export default class FontView extends Vue {
     flex-direction: row;
     justify-content: center;
     align-items: stretch;
+    margin-bottom: 55px;
 
     &-headline {
         font-size: 30px;
