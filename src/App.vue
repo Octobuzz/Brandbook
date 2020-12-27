@@ -31,12 +31,19 @@ import { Vue, Component } from 'vue-property-decorator';
 
 export default class App extends Vue {
   showContent = false;
-  pageWidth = window.innerWidth;
 
   created() {
-  	if (this.pageWidth >= 1100) {
-  		this.showContent = true;
-  	}
+  	window.addEventListener('resize', this.widthHandler);
+  }
+
+  destroyed() {
+  	window.addEventListener('resize', this.widthHandler);
+  }
+
+  widthHandler() {
+  	const width = window.innerWidth;
+    
+  	width >= 1100 ? this.showContent = true : this.showContent = false;
   }
 }
 </script>
