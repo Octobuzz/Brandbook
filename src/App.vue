@@ -30,21 +30,20 @@ import { Vue, Component } from 'vue-property-decorator';
 @Component
 
 export default class App extends Vue {
-  showContent = false;
-
-  created() {
+	mounted() {
   	window.addEventListener('resize', this.widthHandler);
-  }
+	}
 
-  destroyed() {
-  	window.addEventListener('resize', this.widthHandler);
-  }
+	beforeDestroy() {
+  	window.removeEventListener('resize', this.widthHandler);
+	}
 
-  widthHandler() {
+	widthHandler() {
+  	console.log(window.innerWidth);
   	const width = window.innerWidth;
     
-  	width >= 1100 ? this.showContent = true : this.showContent = false;
-  }
+  	this.showContent = width >= 1100;
+	}
 }
 </script>
 
