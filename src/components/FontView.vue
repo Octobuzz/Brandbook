@@ -27,7 +27,7 @@
 			<p class="font-block__text">
 				Фирменная гарнитура логотипа — <b>Trueno</b>  <br />
 				Логотип набран начертанием <b>Regular</b> <br />
-				Кириллическая гарнитура компании — <b>Open Sans</b>  
+				Кириллическая гарнитура компании — <b>Open Sans</b>
 			</p>
 			Была выбрана гарнитура без засечек, чтобы показать модернизм и простоту, к которым стремятся нынешние <br /> IT-гиганты.
 			Также важно было найти определенное начертание буквы «К» (нижняя линия, отходящая от верхней) для сохранения возможности разработки дизайна монограммы в дальнейшем.
@@ -36,10 +36,11 @@
 			<div class="font-actions">
 				<a
 					:href="require('../assets/sources/trueno.zip')"
-					download="trueno.zip"
+					download="Trueno.zip"
 				>Trueno</a>
 				<a
-					href="#"
+					:href="require('../assets/sources/Open_Sans.zip')"
+					download="Open-sans.zip"
 				>Open Sans</a>
 			</div>
 		</div>
@@ -54,7 +55,7 @@ import { Vue, Component } from 'vue-property-decorator';
 export default class FontView extends Vue {
   demo = 'KleverTech';
   typingDemo = '';
-  
+
   mounted() {
 	  this.textTyping(this.demo, 'typingDemo', 300);
   }
@@ -62,7 +63,7 @@ export default class FontView extends Vue {
   textTyping(text, stateTextVar, delay=150) {
   	let counter = 0;
   	let timer;
-    
+
   	if (counter <= text.length) {
   		timer = setInterval(() => {
   			this[stateTextVar] = text.substr(0, counter);
@@ -114,7 +115,7 @@ export default class FontView extends Vue {
             line-height: 30px;
         }
 
-        &__demo {   
+        &__demo {
             margin: 0;
             font-size: 80px;
             line-height: 120px;
