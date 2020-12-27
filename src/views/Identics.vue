@@ -8,7 +8,7 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
-import LandingView from '@/components/LandingView';
+import LandingView from '@/components/LandingView.vue';
 
 @Component({
 	components: {

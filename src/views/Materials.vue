@@ -1,9 +1,5 @@
 <template>
 	<div class="materials">
-		<h1 class="materials__header">
-			Материалы
-		</h1>
-		<page-header />
 		<div class="container">
 			<div>
 				<h2 class="materials__headline">
@@ -24,12 +20,10 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
-import PageHeader from '@/components/PageHeader.vue';
 import FontView from '@/components/FontView.vue';
 
 @Component({
-	components: { 
-		PageHeader,
+	components: {
 		FontView
 	},
 })
@@ -39,11 +33,7 @@ export default class Materials extends Vue {}
 
 <style scoped lang="scss">
 .materials {
-    &__header {
-        font-size: 65px;
-        line-height: 80px;
-        margin: 30px 0 45px;
-    }
+
     .container {
         width: 1100px;
         margin: 0 auto;
