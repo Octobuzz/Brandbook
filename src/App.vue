@@ -8,6 +8,10 @@
 			v-if="!showContent"
 			class="modal"
 		>
+			<img
+				src="./img/caution.png"
+				alt="Caution"
+			/>
 			<p class="modal-headline">
 				Caution!
 			</p>
@@ -27,6 +31,13 @@ import { Vue, Component } from 'vue-property-decorator';
 
 export default class App extends Vue {
   showContent = false;
+  pageWidth = window.innerWidth;
+
+  created() {
+  	if (this.pageWidth >= 1100) {
+  		this.showContent = true;
+  	}
+  }
 }
 </script>
 
@@ -51,9 +62,8 @@ body {
   align-items: center;
 
   &-headline {
-    padding: 10px 25px;
     font-size: 24px;
-    border: 2px solid $main;
+    position: relative;
   }
 
   &-text {
