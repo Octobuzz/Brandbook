@@ -9,10 +9,16 @@
 				Пять стадий разработки айдентики компании
 			</h2>
 			<div class="process-actions">
-				<button class="process-actions__button">
+				<button
+					class="process-actions__button"
+					@click="prevSlide"
+				>
 					Назад
 				</button>
-				<button class="process-actions__button">
+				<button
+					class="process-actions__button"
+					@click="nextSlide"
+				>
 					Далее
 				</button>
 			</div>
@@ -62,7 +68,7 @@
 				</swiper-slide>
 				<swiper-slide class="process-block">
 					<h3 class="process-block__title">
-						Торг 
+						Торг
 					</h3>
 					<div class="process-block__content">
 						<img
@@ -80,7 +86,7 @@
 				</swiper-slide>
 				<swiper-slide class="process-block">
 					<h3 class="process-block__title">
-						Депрессия 
+						Депрессия
 					</h3>
 					<div class="process-block__content">
 						<img
@@ -121,9 +127,10 @@ import { Vue, Component } from 'vue-property-decorator';
 import PageHeader from '@/components/PageHeader.vue';
 import PageFooter from '@/components/PageFooter';
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
+import 'swiper/swiper-bundle.css';
 
 @Component({
-	components: { 
+	components: {
 		PageHeader,
 		PageFooter,
 		Swiper,
@@ -135,10 +142,33 @@ import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 })
 
 export default class Process extends Vue {
+mySwiper = {};
+swiperOptions = {
+	allowTouchMove: false,
+}
+
+mounted() {
+	this.$nextTick(() => {
+		this.mySwiper = this.$refs.mySwiper.$swiper;
+	});
+}
+
+nextSlide() {
+	this.mySwiper.slideNext();
+}
+
+prevSlide() {
+	this.mySwiper.slidePrev();
+}
+
 }
 </script>
 
 <style scoped lang="scss">
+li, b {
+  @include unselectable
+}
+
 .process {
     &__header {
         font-size: 65px;
@@ -159,13 +189,14 @@ export default class Process extends Vue {
 		position: absolute;
 		left: 50%;
 		top: 130px;
-		transform: translateX(-50%);
+    transform: translateX(-50%);
+    z-index: 10;
 
 		&__button {
 			font: inherit;
 			background-color: transparent;
 			border: none;
-			position: relative;
+      position: relative;
 
 			&:hover {
 				cursor: pointer;
@@ -190,7 +221,7 @@ export default class Process extends Vue {
 
 	&-block {
 		margin-bottom: 100px;
-		
+
 		&__title {
 			display: inline-block;
 			font-size: 24px;
@@ -247,7 +278,7 @@ export default class Process extends Vue {
 			justify-content: center;
 		}
 
-		&__img { 
+		&__img {
 			width: 400px;
 			height: auto;
 			margin-right: -85px;
