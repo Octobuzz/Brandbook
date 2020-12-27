@@ -102,7 +102,7 @@
 						<img
 							src="../img/accept.jpg"
 							alt="Принятие"
-							class="process-block__img"
+							class="process-block__img process-block__img--accept"
 						/>
 						<ul class="process-block__list">
 							<li><b>Шаг 1.</b> Включаем плейлист саундтреков к Max Payne 2, грустно смотрим вдаль</li>
@@ -254,6 +254,10 @@ export default class Process extends Vue {
 
 			&--anger {
 				width: 415px;
+			}
+
+			&--accept {
+				margin-right: -80px;
 			}
 		}
 	}
