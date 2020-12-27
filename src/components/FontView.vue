@@ -34,11 +34,12 @@
 			Семейство Trueno удовлетворяет требованиям, а также имеет очень широкий выбор начертаний. <br />
 			Open Sans выбрана для кириллицы (особенность начертания буквы «К» сохранить не удалось). Впоследствии кириллическую гарнитуру можно изменить на более подходящую.
 			<div class="font-actions">
-				<a href="#">Trueno</a>
 				<a
-					href="https://fonts.google.com/specimen/Open+Sans?query=open" 
-					target="_blank" 
-					rel="noopener"
+					:href="require('../assets/sources/trueno.zip')"
+					download="trueno.zip"
+				>Trueno</a>
+				<a
+					href="#"
 				>Open Sans</a>
 			</div>
 		</div>
