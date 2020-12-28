@@ -86,18 +86,36 @@ export default class PageHeader extends Vue {
             margin-right: 0;
         }
 
-        &_active {
-          background-color: $main;
-          color: $white
-        }
-    }
-
-    &__item a {
-        color: #000000;
-        text-decoration: none;
         &:hover {
+            cursor: pointer;
             transition: color .3s ease;
             color: $main;
+        }
+
+        &_active {
+            &:hover {
+                cursor: default;
+                color: $black;
+            }
+            &::after {
+                content: '';
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $main;
+            }
+
+            &::before {
+                content: '';
+                position: absolute;
+                top: -3px;
+                left: 0;
+                width: 100%;
+                height: 2px;
+                background-color: $main;
+            }
         }
     }
 }
