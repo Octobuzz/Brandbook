@@ -1,5 +1,6 @@
 <template>
 	<div id="app">
+		<page-header />
 		<router-view
 			v-if="showContent"
 			class="content"
@@ -35,19 +36,19 @@ import PageHeader from '@/components/PageHeader.vue';
 })
 
 export default class App extends Vue {
+	showContent = true;
 	mounted() {
-  	window.addEventListener('resize', this.widthHandler);
+  		window.addEventListener('resize', this.widthHandler);
 	}
 
 	beforeDestroy() {
-  	window.removeEventListener('resize', this.widthHandler);
+  		window.removeEventListener('resize', this.widthHandler);
 	}
 
 	widthHandler() {
-  	console.log(window.innerWidth);
-  	const width = window.innerWidth;
-    
-  	this.showContent = width >= 1100;
+		const width = window.innerWidth;
+		
+		this.showContent = width >= 1100;
 	}
 }
 </script>
