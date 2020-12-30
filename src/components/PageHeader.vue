@@ -27,7 +27,7 @@ export default class PageHeader extends Vue {
   tabs = [
   	{
   		code: 'main',
-  		name: 'Главная',
+  		name: 'Айдентика',
   		isActive: true,
   	},
   	{
