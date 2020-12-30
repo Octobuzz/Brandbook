@@ -3,17 +3,13 @@
 		<h1 class="landing__header">
 			Айдентика для «Клевертех»
 		</h1>
-		<page-header />
 	</div>
 </template>
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
-import PageHeader from '@/components/PageHeader.vue';
 
-@Component({
-	components: { PageHeader },
-})
+@Component()
 
 export default class LandingView extends Vue {}
 </script>
