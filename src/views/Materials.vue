@@ -2,9 +2,7 @@
 	<div class="materials">
 		<div class="container">
 			<div>
-				<h2 class="materials__headline">
-					Лого
-				</h2>
+				<logo-view />
 			</div>
 			<div>
 				<colors-view />
@@ -22,12 +20,14 @@ import { Vue, Component } from 'vue-property-decorator';
 import FontView from '@/components/FontView.vue';
 import PageFooter from '@/components/PageFooter';
 import ColorsView from '@/components/ColorsView';
+import LogoView from '@/components/LogoView';
 
 @Component({
 	components: { 
 		FontView,
 		PageFooter,
 		ColorsView,
+		LogoView,
 	}
 })
 
