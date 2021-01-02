@@ -5,7 +5,7 @@
 			<span>Не является интеллектуальной собственностью</span>
 		</div>
 		<div class="footer-block">
-			<span>Made for A.Babin</span>
+			<span>Made with God's help</span>
 			<span>2020</span> 
 		</div>
 	</div>
