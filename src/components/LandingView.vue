@@ -9,6 +9,34 @@
 		</div>
 		<div class="landing-block black" />
 		<div class="landing-block purple" />
+		<div class="landing-block purple">
+			<img
+				src="../img/cards.jpg"
+				alt="cards"
+			/>
+		</div>
+		<div class="landing-block">
+			<img
+				src="../img/wall.jpg"
+				alt="wall"
+			/>
+			<img
+				src="../img/sign.jpg"
+				alt="sign"
+			/>
+		</div>
+		<div class="landing-block black">
+			<img
+				src="../img/billboard.jpg"
+				alt="billboard"
+				width="1000"
+			/>
+			<img
+				src="../img/banner.jpg"
+				alt="banner"
+				height="666"
+			/>
+		</div>
 	</div>
 </template>
 
