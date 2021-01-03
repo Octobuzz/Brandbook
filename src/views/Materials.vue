@@ -6,11 +6,14 @@
 					Лого
 				</h2>
 			</div>
-			<div>
+			<div class="materials-block">
 				<colors-view />
 			</div>
-			<div>
-				<font-view />
+			<div
+				ref="fontBlock"
+				class="materials-block"
+			>
+				<font-view :isInViewPort="isInViewPort" />
 			</div>
 		</div>
 		<page-footer class="footer" />
@@ -31,7 +34,31 @@ import ColorsView from '@/components/ColorsView';
 	}
 })
 
-export default class Materials extends Vue {}
+export default class Materials extends Vue {
+	isAnimationPlayed = false;
+	isInViewPort = false;
+
+	mounted() {
+		this.$nextTick(() => {
+			window.addEventListener('scroll', this.checkIsInViewPort);
+		});
+	}
+
+	checkIsInViewPort() { 
+		const rect = this.$refs.fontBlock.getBoundingClientRect();
+
+		this.isInViewPort = (
+			rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+		);
+	}
+
+	beforeDestroy() {
+		window.removeEventListener('scroll', this.checkIsInViewPort);
+	}
+}
 </script>
 
 <style scoped lang="scss">

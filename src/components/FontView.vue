@@ -48,17 +48,23 @@
 </template>
 
 <script>
-import { Vue, Component } from 'vue-property-decorator';
+import { Vue, Component, Prop, Watch, Emit } from 'vue-property-decorator';
 
-@Component
+@Component({})
 
 export default class FontView extends Vue {
+  @Prop({type: Boolean, default: true}) isInViewPort
   demo = 'KleverTech';
   typingDemo = '';
+  isAnimationPlayed = false;
 
-  mounted() {
-	  this.textTyping(this.demo, 'typingDemo', 300);
-  }
+  @Watch('isInViewPort')
+  onBlockVisibleChanging(newVal) {
+  	if (newVal && !this.isAnimationPlayed) {
+  		this.textTyping(this.demo, 'typingDemo', 300);
+  		this.isAnimationPlayed = true;
+  	}
+  }  
 
   textTyping(text, stateTextVar, delay=150) {
   	let counter = 0;
