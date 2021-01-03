@@ -1,9 +1,5 @@
 <template>
 	<div class="process">
-		<h1 class="process__header">
-			Процесс создания
-		</h1>
-		<page-header />
 		<div class="container">
 			<h2 class="process-headline">
 				Пять стадий разработки айдентики компании
@@ -126,21 +122,16 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
-import PageHeader from '@/components/PageHeader.vue';
 import PageFooter from '@/components/PageFooter';
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 import 'swiper/swiper-bundle.css';
 
 @Component({
 	components: {
-		PageHeader,
 		PageFooter,
 		Swiper,
     	SwiperSlide,
 	},
-	directives: {
-    	swiper: directive
-	}
 })
 
 export default class Process extends Vue {
