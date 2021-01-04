@@ -38,7 +38,9 @@ import PageHeader from '@/components/PageHeader.vue';
 
 export default class App extends Vue {
 	showContent = true;
+
 	mounted() {
+		this.showContent = screen.width >= 1100;
   		window.addEventListener('resize', this.widthHandler);
 	}
 
@@ -47,9 +49,7 @@ export default class App extends Vue {
 	}
 
 	widthHandler() {
-		const width = window.innerWidth;
-		
-		this.showContent = width >= 1100;
+		this.showContent = screen.width >= 1100;
 	}
 }
 </script>
