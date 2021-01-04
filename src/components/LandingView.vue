@@ -1,8 +1,8 @@
 <template>
 	<div class="landing">
-		<div class="landing-block">
+		<div class="landing-block white">
 			<div class="container">
-				<div class="landing-mockup">
+				<div class="landing-mockup ">
 					ЛОГОТИП
 				</div>
 			</div>
@@ -11,28 +11,28 @@
 		<div class="landing-block purple" />
 		<div class="landing-block purple">
 			<img
-				src="../img/cards.jpg"
+				src="../assets/img/cards.jpg"
 				alt="cards"
 			/>
 		</div>
 		<div class="landing-block">
 			<img
-				src="../img/wall.jpg"
+				src="../assets/img/wall.jpg"
 				alt="wall"
 			/>
 			<img
-				src="../img/sign.jpg"
+				src="../assets/img/sign.jpg"
 				alt="sign"
 			/>
 		</div>
 		<div class="landing-block black">
 			<img
-				src="../img/billboard.jpg"
+				src="../assets/img/billboard.jpg"
 				alt="billboard"
 				width="1000"
 			/>
 			<img
-				src="../img/banner.jpg"
+				src="../assets/img/banner.jpg"
 				alt="banner"
 				height="666"
 			/>
@@ -59,6 +59,8 @@ export default class LandingView extends Vue {}
 	}
 
 	&-mockup {
+		filter: invert(1);
+		mix-blend-mode: difference;	
 		font-size: 100px;
 		font-weight: bold;
 		position: fixed;
@@ -80,6 +82,10 @@ export default class LandingView extends Vue {}
 	.black {
 		background-color: $black;
 		color: $white;
+	}
+
+	.white {
+		background-color: $white;
 	}
 }
 </style>

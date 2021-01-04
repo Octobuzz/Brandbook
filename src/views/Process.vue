@@ -28,7 +28,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../img/denial.jpeg"
+							src="../assets/img/denial.jpeg"
 							alt="Отрицание"
 							class="process-block__img"
 						/>
@@ -47,7 +47,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../img/anger.png"
+							src="../assets/img/anger.png"
 							alt="Гнев"
 							class="process-block__img process-block__img--anger"
 						/>
@@ -67,7 +67,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../img/trade.png"
+							src="../assets/img/trade.png"
 							alt="Торг"
 							class="process-block__img"
 						/>
@@ -85,7 +85,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../img/depression.jpg"
+							src="../assets/img/depression.jpg"
 							alt="Депрессия"
 							class="process-block__img"
 						/>
@@ -101,7 +101,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../img/accept.jpg"
+							src="../assets/img/accept.jpg"
 							alt="Принятие"
 							class="process-block__img process-block__img--accept"
 						/>
@@ -197,14 +197,14 @@ li, b {
 			}
 
 			&:first-child::before {
-				content: url('../svg/chevron-left.svg');
+				content: url('../assets/svg/chevron-left.svg');
 				position: absolute;
 				top: 5px;
 				left: -20px;
 			}
 
 			&:last-child::after {
-				content: url('../svg/chevron-right.svg');
+				content: url('../assets/svg/chevron-right.svg');
 				position: absolute;
 				top: 6px;
 				right: -20px;
