@@ -16,6 +16,40 @@
 			<img
 				src="../assets/img/cards.jpg"
 				alt="cards"
+				width="700"
+			/>
+			<img
+				src="../assets/img/card1.png"
+				alt="cards"
+				class="card"
+				width="400"
+			/>
+			<img
+				src="../assets/img/card2.png"
+				alt="cards"
+				width="400"
+			/>
+			<img
+				src="../assets/img/card3.png"
+				alt="cards"
+				width="400"
+			/>
+			<img
+				src="../assets/img/card4.png"
+				alt="cards"
+				class="card"
+				width="400"
+			/>
+			<img
+				src="../assets/img/card5.png"
+				alt="cards"
+				width="400"
+			/>
+			<img
+				src="../assets/img/card6.png"
+				alt="cards"
+				class="card"
+				width="400"
 			/>
 		</div>
 		<div class="landing-block flex">
@@ -35,7 +69,7 @@
 		</div>
 		<div class="landing-block black flex">
 			<h1 class="landing-headline">
-				Реклама
+				Реклама <span class="subtext">здесь могла бы быть ваша +7 905 773-86-13</span>
 			</h1>
 			<img
 				src="../assets/img/billboard.jpg"
@@ -74,6 +108,12 @@ export default class LandingView extends Vue {}
 		position: absolute;
 		font-size: 80px;
 		z-index: 2;
+		left: 100px;
+		top: 150px;
+
+		&:first-child {
+			top: 30px;
+		}
 
 		&::after {
 			content: '';
@@ -81,7 +121,7 @@ export default class LandingView extends Vue {}
 			width: 100%;
 			background-color: $main;
 			position: absolute;
-			bottom: 0;
+			bottom: 10px;
 			left: 50%;
 			transform: translateX(-50%);
 			z-index: -1;
@@ -108,10 +148,21 @@ export default class LandingView extends Vue {}
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 	}
 
 	.m-r {
 		margin-right: 50px;
+	}
+
+	.card {
+		margin-bottom: 60px;
+	}
+
+	.subtext { 
+		display: inline-block;
+		font-size: 14px;
+		padding-right: 10px;
 	}
 }
 </style>
