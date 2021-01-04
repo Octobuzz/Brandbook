@@ -63,6 +63,7 @@ export default class PageHeader extends Vue {
 
 <style scoped lang="scss">
 .nav {
+    padding-top: 30px;
     &__list {
         display: flex;
         justify-content: space-between;
@@ -76,7 +77,7 @@ export default class PageHeader extends Vue {
         &__header {
         font-size: 65px;
         line-height: 80px;
-        margin: 30px 0 45px;
+        margin: 0 0 45px;
         }
 
     &__item {

@@ -1,3 +1,19 @@
 @import "fonts.scss";
 @import "vars.scss";
 @import "mixins.scss";
+
+.flex {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.flex-space-between {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;   
+}

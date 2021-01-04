@@ -24,6 +24,7 @@ import FontView from '@/components/FontView.vue';
 import PageFooter from '@/components/PageFooter';
 import ColorsView from '@/components/ColorsView';
 import LogoView from '@/components/LogoView';
+import { isInViewPort } from '../assets/scripts/helpers.js';
 
 @Component({
 	components: { 
@@ -44,15 +45,8 @@ export default class Materials extends Vue {
 		});
 	}
 
-	checkIsInViewPort() { 
-		const rect = this.$refs.fontBlock.getBoundingClientRect();
-
-		this.isInViewPort = (
-			rect.top >= 0 &&
-        rect.left >= 0 &&
-        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-		);
+	checkIsInViewPort() {
+		this.isInViewPort = isInViewPort(this.$refs.fontBlock).isInViewPort;
 	}
 
 	beforeDestroy() {

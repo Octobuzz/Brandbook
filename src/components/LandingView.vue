@@ -2,12 +2,25 @@
 	<div class="landing">
 		<div class="landing-block white">
 			<div class="container">
-				<div class="landing-mockup">
+				<div
+					v-if="!isLogoScrolled"
+					class="landing-mockup"
+				>
 					ЛОГОТИП
 				</div>
 			</div>
 		</div>
-		<div class="landing-block black" />
+		<div
+			ref="black"
+			class="landing-block black "
+		>
+			<div
+				v-if="isLogoScrolled"
+				class="landing-mockup_static"
+			>
+				ЛОГОТИП
+			</div>
+		</div>
 		<div class="landing-block flex purple">
 			<img
 				src="../assets/img/cards.png"
@@ -48,22 +61,50 @@
 				width="400"
 			/>
 		</div>
-		<div class="landing-block flex">
+		<div class="landing-block white flex-space-between">
 			<div class="line">
-				Дизайн этой секции досутпен только по платной подписке Дизайн этой секции досутпен только по платной подписке
+				<div class="line__text-container">
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке
+					</p>
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке
+					</p>
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке
+					</p>
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке
+					</p>
+				</div>
 			</div>
-			<img
-				src="../assets/img/wall.jpg"
-				alt="wall"
-				height="414"
-				class="m-r"
-			/>
-			<img
-				src="../assets/img/sign.jpg"
-				alt="sign"
-			/>
+			<div class="static-mockup">
+				<img
+					src="../assets/img/wall.jpg"
+					alt="wall"
+					height="414"
+					class="m-r"
+				/>
+				<img
+					src="../assets/img/sign.jpg"
+					alt="sign"
+				/>
+			</div>
 			<div class="line">
-				Дизайн этой секции досутпен только по платной подписке Дизайн этой секции досутпен только по платной подписке
+				<div class="line__text-container">
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке
+					</p>
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке
+					</p>
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке
+					</p>
+					<p class="line__running-text">
+						Дизайн этой секции досутпен только по платной подписке 
+					</p>
+				</div>
 			</div>
 		</div>
 		<div class="landing-block black flex">
@@ -87,17 +128,45 @@
 
 <script>
 import { Vue, Component } from 'vue-property-decorator';
+import { isInViewPort } from '../assets/scripts/helpers.js';
 
 @Component()
 
-export default class LandingView extends Vue {}
+export default class LandingView extends Vue {
+	isLogoScrolled = false;
+
+	mounted() {
+		this.$nextTick(() => {
+			window.addEventListener('scroll', this.scrollHandler);
+		});
+	}
+
+	scrollHandler() {
+		const isBlackinViewPort = isInViewPort(this.$refs.black).isWasInViewPort;
+
+		if (isBlackinViewPort) {
+			if (!this.isLogoScrolled) {
+				this.isLogoScrolled = true;
+			}
+		} else {
+			if (this.isLogoScrolled) {
+				this.isLogoScrolled = false;
+			}
+		}
+	}
+
+	beforeDestroy() {
+		window.removeEventListener('scroll', this.scrollHandler);
+	}
+}
 </script>
 
 <style scoped lang="scss">
 .landing {
-	margin-top: 100px;
-
 	&-block {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		width: 100%;
 		height: 100vh;
 	}
@@ -109,7 +178,11 @@ export default class LandingView extends Vue {}
 		top: 50%;
 		transform: translate(-50%, -50%);
 		filter: invert(1);
-		mix-blend-mode: difference;	
+		mix-blend-mode: difference;
+
+		&_static {
+			font-size: 100px;	
+		}
 	}
 
 	&-headline {
@@ -151,14 +224,6 @@ export default class LandingView extends Vue {}
 	.white {
 		background-color: $white;
 	}
-	
-	.flex {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-wrap: wrap;
-	}
 
 	.m-r {
 		margin-right: 70px;
@@ -175,12 +240,30 @@ export default class LandingView extends Vue {}
 	}
 
 	.line {
-		width: 100%;
+		position: relative;
 		font-size: 25px;
+		height: 50px;
 		text-transform: uppercase;
 		background-color: $black;
 		color: white;
-		position: absolute;
+		overflow: hidden;
+		--offset: 10vw;
+		--move-initial: calc(-15% + var(--offset));
+		--move-final: calc(-30% - var(--offset));
+
+		&__text-container {
+			width: fit-content;
+			display: flex;
+			position: relative;
+			transform: translate3d(var(--move-initial), 0, 0);
+			animation: toRight 5s infinite linear;
+		}
+
+		&__running-text {
+			margin: 0;
+			padding: 0 2vw;
+			white-space: nowrap;
+		}
 
 		&:first-child {
 			top: 10px;
@@ -190,5 +273,19 @@ export default class LandingView extends Vue {}
 			bottom: 10px;
 		}
 	}
+
+	@keyframes toRight {
+		0% {
+        	transform: translate3d(var(--move-initial), 0, 0);
+    	}
+
+   		100% {
+        	transform: translate3d(var(--move-final), 0, 0);
+    	}
+	}
+}
+
+.static-mockup {
+	width: 100%;
 }
 </style>

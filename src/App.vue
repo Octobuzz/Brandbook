@@ -1,10 +1,11 @@
 <template>
 	<div id="app">
-		<div v-if="showContent">
+		<div
+			v-if="showContent"
+			class="content"
+		>
 			<page-header />
-			<router-view
-				class="content"
-			/>
+			<router-view />
 		</div>
 		<div
 			v-if="!showContent"
@@ -56,18 +57,23 @@ export default class App extends Vue {
 
 <style lang="scss">
 #app {
+	height:100%;
   font-family: $klever;
   text-align: center;
   color: $black;
+  background-color: $main;
 }
 
 body {
+  min-height: 100%;
+  width: 100%;		
   margin: 0;
   font-size: 18px;
   line-height: 1.7;
 }
 
 .modal {
+  background-color: $white;	
   font-size: 16px;
   padding: 15px;
   display: flex;
@@ -82,6 +88,13 @@ body {
   &-text {
     margin: 0;
   }
+}
+.content {
+	height: 100%;
+	max-width: 2000px;
+	margin: 0 auto;
+	box-shadow: 10px 0 10px;
+	background-color: $white;
 }
 
 </style>

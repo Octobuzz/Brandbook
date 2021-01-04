@@ -189,7 +189,8 @@ li, b {
 			font: inherit;
 			background-color: transparent;
 			border: none;
-      position: relative;
+			  position: relative;
+			  outline: none;
 
 			&:hover {
 				cursor: pointer;
