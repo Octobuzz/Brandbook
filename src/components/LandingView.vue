@@ -2,26 +2,22 @@
 	<div class="landing">
 		<div class="landing-block white">
 			<div class="container">
-				<div class="landing-mockup ">
+				<div class="landing-mockup">
 					ЛОГОТИП
 				</div>
 			</div>
 		</div>
 		<div class="landing-block black" />
-		<div class="landing-block purple" />
-		<div class="landing-block flex">
-			<h1 class="landing-headline">
-				Визитки
-			</h1>
+		<div class="landing-block flex purple">
 			<img
-				src="../assets/img/cards.jpg"
+				src="../assets/img/cards.png"
 				alt="cards"
 				width="700"
 			/>
 			<img
 				src="../assets/img/card1.png"
 				alt="cards"
-				class="card"
+				class="card m-r"
 				width="400"
 			/>
 			<img
@@ -53,9 +49,9 @@
 			/>
 		</div>
 		<div class="landing-block flex">
-			<h1 class="landing-headline">
-				Вывески
-			</h1>
+			<div class="line">
+				Дизайн этой секции досутпен только по платной подписке Дизайн этой секции досутпен только по платной подписке
+			</div>
 			<img
 				src="../assets/img/wall.jpg"
 				alt="wall"
@@ -66,6 +62,9 @@
 				src="../assets/img/sign.jpg"
 				alt="sign"
 			/>
+			<div class="line">
+				Дизайн этой секции досутпен только по платной подписке Дизайн этой секции досутпен только по платной подписке
+			</div>
 		</div>
 		<div class="landing-block black flex">
 			<h1 class="landing-headline">
@@ -103,19 +102,23 @@ export default class LandingView extends Vue {}
 		height: 100vh;
 	}
 
-	&-headline {
+	&-mockup {
+		font-size: 100px;
+		position: fixed;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
 		filter: invert(1);
 		mix-blend-mode: difference;	
+	}
+
+	&-headline {
 		margin: 0;
 		position: absolute;
 		font-size: 80px;
 		z-index: 2;
 		left: 100px;
-		top: 150px;
-
-		&:first-child {
-			top: 30px;
-		}
+		top: 50px;
 
 		&::after {
 			content: '';
@@ -158,17 +161,34 @@ export default class LandingView extends Vue {}
 	}
 
 	.m-r {
-		margin-right: 50px;
+		margin-right: 70px;
 	}
 
 	.card {
-		margin-bottom: 60px;
+		margin-bottom: 70px;
 	}
 
 	.subtext { 
 		display: inline-block;
 		font-size: 14px;
 		padding-right: 10px;
+	}
+
+	.line {
+		width: 100%;
+		font-size: 25px;
+		text-transform: uppercase;
+		background-color: $black;
+		color: white;
+		position: absolute;
+
+		&:first-child {
+			top: 10px;
+		}
+
+		&:last-child {
+			bottom: 10px;
+		}
 	}
 }
 </style>
