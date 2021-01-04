@@ -11,7 +11,7 @@
 			class="modal"
 		>
 			<img
-				src="./img/caution.png"
+				src="./assets/img/caution.png"
 				alt="Caution"
 			/>
 			<p class="modal-headline">

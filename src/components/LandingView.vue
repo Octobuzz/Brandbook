@@ -9,32 +9,44 @@
 		</div>
 		<div class="landing-block black" />
 		<div class="landing-block purple" />
-		<div class="landing-block purple">
+		<div class="landing-block flex">
+			<h1 class="landing-headline">
+				Визитки
+			</h1>
 			<img
-				src="../img/cards.jpg"
+				src="../assets/img/cards.jpg"
 				alt="cards"
 			/>
 		</div>
-		<div class="landing-block">
+		<div class="landing-block flex">
+			<h1 class="landing-headline">
+				Вывески
+			</h1>
 			<img
-				src="../img/wall.jpg"
+				src="../assets/img/wall.jpg"
 				alt="wall"
+				height="414"
+				class="m-r"
 			/>
 			<img
-				src="../img/sign.jpg"
+				src="../assets/img/sign.jpg"
 				alt="sign"
 			/>
 		</div>
-		<div class="landing-block black">
+		<div class="landing-block black flex">
+			<h1 class="landing-headline">
+				Реклама
+			</h1>
 			<img
-				src="../img/billboard.jpg"
+				src="../assets/img/billboard.jpg"
 				alt="billboard"
-				width="1000"
+				width="850"
+				class="m-r"
 			/>
 			<img
-				src="../img/banner.jpg"
+				src="../assets/img/banner.jpg"
 				alt="banner"
-				height="666"
+				height="566"
 			/>
 		</div>
 	</div>
@@ -55,16 +67,25 @@ export default class LandingView extends Vue {}
 	&-block {
 		width: 100%;
 		height: 100vh;
-		overflow: hidden;
 	}
 
-	&-mockup {
-		font-size: 100px;
-		font-weight: bold;
-		position: fixed;
-		top: 50%;
-    	left: 50%;
-  		transform: translate3d(-50%,-50%,0);
+	&-headline {
+		margin: 0;
+		position: absolute;
+		font-size: 80px;
+		z-index: 2;
+
+		&::after {
+			content: '';
+			height: 50px;
+			width: 100%;
+			background-color: $main;
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
 	}
 
 	.container {
@@ -80,6 +101,17 @@ export default class LandingView extends Vue {}
 	.black {
 		background-color: $black;
 		color: $white;
+	}
+
+	.flex {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.m-r {
+		margin-right: 50px;
 	}
 }
 </style>
