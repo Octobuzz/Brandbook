@@ -1,10 +1,11 @@
 <template>
 	<div id="app">
-		<page-header />
-		<router-view
-			v-if="showContent"
-			class="content"
-		/>
+		<div v-if="showContent">
+			<page-header />
+			<router-view
+				class="content"
+			/>
+		</div>
 		<div
 			v-if="!showContent"
 			class="modal"
