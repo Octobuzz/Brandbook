@@ -1,7 +1,42 @@
 <template>
 	<div class="logo">
 		<div class="logo-block">
-			<div class="demo" />
+			<div class="demo">
+				<img
+					src="../assets/img/logo.png"
+					alt="logo"
+					class="logo"
+				/>
+				<img
+					src="../assets/img/logo-black.png"
+					alt="logo"
+					class="logo"
+				/>
+				<img
+					src="../assets/img/logo-white.png"
+					alt="logo"
+					class="logo white"
+				/>
+				<div class="demo-block">
+					<img
+						src="../assets/img/mainlogo.png"
+						alt="logo"
+						class="main-logo logo"
+					/>
+					<img
+						src="../assets/img/mainlogoblack.png"
+						alt="logo"
+						class="main-logo logo"
+						width="500"
+					/>
+					<img
+						src="../assets/img/mainlogowhite.png"
+						alt="logo"
+						class="main-logo logo white"
+						width="500"
+					/>
+				</div>
+			</div>
 		</div>
 		<div class="logo-block">
 			<h2 class="logo-headline">
@@ -117,6 +152,37 @@ export default class LogoView extends Vue {}
         flex-wrap: wrap;
         justify-content: flex-end;
         padding: 15px 0 25px 0;
+
+        &-block {
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+    }
+
+    .main-logo {
+        width: 200px;
+        height: auto;
+    }
+
+    .logo {
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 0;
+        display: block;
+
+        &:nth-last-child(1),
+        &:nth-last-child(2),
+        &:nth-last-child(3) {
+            padding: 10px;
+        }
+
+    }
+
+    .white {
+        background-color: $black;
     }
 }
 </style>
