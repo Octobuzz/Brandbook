@@ -28,7 +28,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../assets/img/denial.jpeg"
+							src="../assets/img/denial.png"
 							alt="Отрицание"
 							class="process-block__img"
 						/>
@@ -85,7 +85,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../assets/img/depression.jpg"
+							src="../assets/img/depression.png"
 							alt="Депрессия"
 							class="process-block__img"
 						/>
@@ -101,7 +101,7 @@
 					</h3>
 					<div class="process-block__content">
 						<img
-							src="../assets/img/accept.jpg"
+							src="../assets/img/accept.png"
 							alt="Принятие"
 							class="process-block__img process-block__img--accept"
 						/>

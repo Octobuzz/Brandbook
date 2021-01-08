@@ -80,13 +80,13 @@
 			</div>
 			<div class="static-mockup">
 				<img
-					src="../assets/img/wall.jpg"
+					src="../assets/img/wall.png"
 					alt="wall"
 					height="414"
 					class="m-r"
 				/>
 				<img
-					src="../assets/img/sign.jpg"
+					src="../assets/img/sign.png"
 					alt="sign"
 				/>
 			</div>
@@ -112,13 +112,13 @@
 				Реклама <span class="subtext">здесь могла бы быть ваша +7 905 773-86-13</span>
 			</h1>
 			<img
-				src="../assets/img/billboard.jpg"
+				src="../assets/img/billboard.png"
 				alt="billboard"
 				width="850"
 				class="m-r"
 			/>
 			<img
-				src="../assets/img/banner.jpg"
+				src="../assets/img/banner.png"
 				alt="banner"
 				height="566"
 			/>
