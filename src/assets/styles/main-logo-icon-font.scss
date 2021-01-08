@@ -1,0 +1,93 @@
+@font-face {
+  font-family: 'kleverTechLogo';
+  src:  url(~@/assets/fonts/icon-font/kleverTechLogo.eot?iku8gb);
+  src:  url(~@/assets/fonts/icon-font/kleverTechLogo.eot?iku8gb#iefix) format('embedded-opentype'),
+    url(~@/assets/fonts/icon-font/kleverTechLogo.ttf?iku8gb) format('truetype'),
+    url(~@/assets/fonts/icon-font/kleverTechLogo.woff?iku8gb) format('woff'),
+    url(~@/assets/fonts/icon-font/kleverTechLogo.svg?iku8gb#kleverTechLogo) format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'kleverTechLogo' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon--blmain:before {
+  content: "\e90d";
+}
+.icon--clrmain .path1:before {
+  content: "\e900";
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path2:before {
+  content: "\e901";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path3:before {
+  content: "\e902";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path4:before {
+  content: "\e903";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path5:before {
+  content: "\e904";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path6:before {
+  content: "\e905";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path7:before {
+  content: "\e906";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path8:before {
+  content: "\e907";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path9:before {
+  content: "\e908";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path10:before {
+  content: "\e909";
+  margin-left: -4.890625em;
+  color: rgb(0, 0, 0);
+}
+.icon--clrmain .path11:before {
+  content: "\e90a";
+  margin-left: -4.890625em;
+  color: rgb(102, 0, 204);
+}
+.icon--clrmain .path12:before {
+  content: "\e90b";
+  margin-left: -4.890625em;
+  color: rgb(102, 0, 204);
+}
+.icon--whmain:before {
+  content: "\e90c";
+  color: #fff;
+}

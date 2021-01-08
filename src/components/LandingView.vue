@@ -6,7 +6,7 @@
 					v-if="!isLogoScrolled"
 					class="landing-mockup"
 				>
-					ЛОГОТИП
+					<i :class="`icon--${isScrolled ? 'bl' : 'clr'}main`"><span class="path1" /><span class="path2" /><span class="path3" /><span class="path4" /><span class="path5" /><span class="path6" /><span class="path7" /><span class="path8" /><span class="path9" /><span class="path10" /><span class="path11" /><span class="path12" /></i>
 				</div>
 			</div>
 		</div>
@@ -18,7 +18,7 @@
 				v-if="isLogoScrolled"
 				class="landing-mockup_static"
 			>
-				ЛОГОТИП
+				<i class="icon--whmain"><span class="path1" /><span class="path2" /><span class="path3" /><span class="path4" /><span class="path5" /><span class="path6" /><span class="path7" /><span class="path8" /><span class="path9" /><span class="path10" /><span class="path11" /><span class="path12" /></i>
 			</div>
 		</div>
 		<div class="landing-block flex purple">
@@ -134,6 +134,7 @@ import { isInViewPort } from '../assets/scripts/helpers.js';
 
 export default class LandingView extends Vue {
 	isLogoScrolled = false;
+	isScrolled = false;
 
 	mounted() {
 		this.$nextTick(() => {
@@ -143,6 +144,8 @@ export default class LandingView extends Vue {
 
 	scrollHandler() {
 		const isBlackinViewPort = isInViewPort(this.$refs.black).isWasInViewPort;
+
+		this.isScrolled = window.scrollY > 0;
 
 		if (isBlackinViewPort) {
 			if (!this.isLogoScrolled) {
@@ -172,7 +175,7 @@ export default class LandingView extends Vue {
 	}
 
 	&-mockup {
-		font-size: 100px;
+		font-size: 182px;
 		position: fixed;
 		left: 50%;
 		top: 50%;
@@ -181,7 +184,7 @@ export default class LandingView extends Vue {
 		mix-blend-mode: difference;
 
 		&_static {
-			font-size: 100px;	
+			font-size: 182px;	
 		}
 	}
 

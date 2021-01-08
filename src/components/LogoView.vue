@@ -64,7 +64,8 @@
 				Допускается использование лого в монохромном белом или черном варианте. <br />
 			</p>
 			<a
-				href="#"
+				:href="require('../assets/sources/klev-logo-sources.zip')"
+				download="KleverTech-logo-sources.zip"
 				class="logo-block__button"
 			>Исходные файлы</a>
 		</div>
